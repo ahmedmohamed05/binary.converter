@@ -1,0 +1,106 @@
+:root {
+  --purple: rgb(162, 0, 255);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #030303;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.container {
+  width: min(600px, 95%);
+  margin-inline: auto;
+  display: grid;
+  gap: 2em;
+}
+.intro {
+  display: grid;
+  gap: 1em;
+}
+@media (min-width: 768px) {
+  .intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.intro h1 {
+  text-transform: capitalize;
+  text-align: center;
+}
+.intro h1 span {
+  position: relative;
+  color: var(--purple);
+}
+.intro h1 span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  translate: -50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--purple);
+  transition: 250ms;
+}
+.intro h1 span:hover::after {
+  width: 100%;
+}
+
+.intro button {
+  all: unset;
+  border: solid 1px var(--purple);
+  padding: 0.5em;
+  cursor: pointer;
+  transition: 200ms;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media (hover) {
+  .intro button:is(:hover, :focus) {
+    background-color: var(--purple);
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.input input {
+  padding: 0.5em;
+  background-color: transparent;
+  font-size: 16px;
+  caret-color: var(--purple);
+  color: white;
+  border: solid 1px white;
+  transition: 250ms;
+  outline: none;
+  &:focus {
+    border-color: var(--purple);
+  }
+}
+
+.output h3 {
+  font-size: 20px;
+}
+.output h3 span {
+  color: var(--purple);
+}
