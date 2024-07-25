@@ -11,26 +11,48 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <script defer src="./script.js"></script>
-    <title>Decimal Binary Converter</title>
+    <title>Base Converter</title>
   </head>
   <body>
     <div class="wrapper">
       <main class="container">
         <div class="intro">
-          <h1>
-            From <span class="from">Decimal</span> To
-            <span class="to">Binary</span>
-          </h1>
-          <button class="change-converter" data-to="binary">
-            Change Converter
-          </button>
+          <div class="from">
+            <h1>From</h1>
+            <select name="from" id="from">
+              <option value="2">base 2 (Binary)</option>
+              <option value="3">base 3 (Ternary)</option>
+              <option value="4">base 4 (Quaternary)</option>
+              <option value="5">base 5 (Quinary)</option>
+              <option value="6">base 6 (Senary)</option>
+              <option value="7">base 7 (Septenary)</option>
+              <option value="8">base 8 (octal)</option>
+              <option value="9">base 9 (Nonary)</option>
+              <option value="10" selected>base 10 (Decimal)</option>
+            </select>
+          </div>
+          <div class="To">
+            <h1>To</h1>
+            <select name="to" id="to">
+              <option value="2" selected>base 2 (Binary)</option>
+              <option value="3">base 3 (Ternary)</option>
+              <option value="4">base 4 (Quaternary)</option>
+              <option value="5">base 5 (Quinary)</option>
+              <option value="6">base 6 (Senary)</option>
+              <option value="7">base 7 (Septenary)</option>
+              <option value="8">base 8 (octal)</option>
+              <option value="9">base 9 (Nonary)</option>
+              <option value="10">base 10 (Decimal)</option>
+            </select>
+          </div>
         </div>
         <div class="input">
-          <label for="input"> Enter Decimal </label>
+          <label for="input">Enter a number</label>
           <input id="input" type="text" autofocus />
+          <button>Convert</button>
         </div>
         <div class="output">
-          <h3>Write Something <span>:)</span></h3>
+          <h3>Write any number <span>:)</span></h3>
         </div>
       </main>
     </div>
